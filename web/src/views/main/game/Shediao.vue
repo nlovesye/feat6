@@ -35,6 +35,9 @@
                     <Radio label="气"></Radio>
                 </RadioGroup>
             </div>
+            <div class="condition">
+                <Input search enter-button placeholder="名称" v-model="name" />
+            </div>
         </div>
         <Spin v-if="listLoading" />
         <div class="card_list_con clear" v-else>
@@ -268,6 +271,7 @@ export default {
             camp: '',
             grade: '',
             func: '',
+            name: '',
             uploadModalVisible: false,
             uploadName: '',
             uploadedList: []
@@ -281,7 +285,7 @@ export default {
         filterHeros () {
             const filterList = this.heros.filter(hero => {
                 const conditions = (
-                    (!this.camp || hero.camp === this.camp) && (!this.grade || hero.grade === this.grade) && (!this.func || hero.func === this.func)
+                    (!this.camp || hero.camp === this.camp) && (!this.grade || hero.grade === this.grade) && (!this.func || hero.func === this.func) && (!this.name || hero.name.indexOf(this.name) > -1)
                 )
                 return conditions
             })
