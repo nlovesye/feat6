@@ -1,7 +1,7 @@
 const router = require('koa-router')()
 const { db } = require('../utils')
 
-router.get('/', async (ctx, next) => {
+router.get('/admin_manage', async (ctx, next) => {
     // db.addJson('test')
     // db.insert('test', general)
     // db.removeAll('test')
