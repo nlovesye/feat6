@@ -20,7 +20,7 @@ app.use(bodyParser())
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/static'))
-// app.use(require('koa-static')(__dirname + '/web/dist'))
+app.use(require('koa-static')(__dirname + '/web/dist'))
 app.use(views(__dirname + '/views', {
     extension: 'html'
 }))
