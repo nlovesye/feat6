@@ -15,6 +15,10 @@ const routeView = {
     shediao: {
         icon: 'md-cube',
         component: () => import('@/views/main/game/Shediao.vue')
+    },
+    yyjh: {
+        icon: 'md-cube',
+        component: () => import('@/views/main/game/Yyjh.vue')
     }
 }
 
