@@ -1,1 +1,0 @@
-[{"userName":"admin","pwd":"1234","nickName":"管理员","desc":"root user","auth":[]},{"userName":"nloves","pwd":"1111","nickName":"怄猴","desc":"管理员用户","auth":[{"name":"game","parentName":"","checked":true},{"name":"shediao","parentName":"game","checked":true},{"name":"sgz","parentName":"game","checked":true}]}]
