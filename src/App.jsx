@@ -1,13 +1,34 @@
-import { useState } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Header'
 
 function App() {
+  console.log("🚀 ~ App:")
+  const str = useMemo(() => {
+    console.log('useMemo function')
+    return 'hello useMemo'
+  }, [])
+
   const [count, setCount] = useState(0)
+  const [data, setData] = useState(null)
+
+  const onClick = () => {
+    setCount((count) => count + 1)
+  }
+
+  const onDataClick = () => {
+    setData(prev => ({ ...prev, msg: 'hello setState' }))
+  }
+
+  useEffect(() => {
+    console.log('data changed')
+  }, [data])
 
   return (
     <>
+      <Header data={data} />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -18,8 +39,12 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={onClick}>
           count is {count}
+        </button>
+        <br />
+        <button onClick={onDataClick}>
+          change Data
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
